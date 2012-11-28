@@ -18,8 +18,8 @@ public class RSA {
 
     RSA(int A) {
         // wbierz dwie duze liczby pierwsze p i q 
-        BigInteger p = BigInteger.probablePrime(A, random);
-        BigInteger q = BigInteger.probablePrime(A, random);
+        BigInteger p = BigInteger.probablePrime(A/2, random);
+        BigInteger q = BigInteger.probablePrime(A/2, random);
         // (p - 1) * (q - 1)
         BigInteger M = (p.subtract(jeden)).multiply(q.subtract(jeden));
 
@@ -61,3 +61,9 @@ public class RSA {
         System.out.println("Deszyfrowanie = " + deszyfrowanie);
     }
 }
+
+// BigInteger wiadomosc = new BigInteger(A-1, random);
+
+// String s = "test";
+// Byte [] bytes = s.getBytes ();
+// BigInteger message = new BigInteger (s); 
