@@ -6,9 +6,10 @@ import java.awt.geom.*;
 class Kulka extends Ellipse2D.Float
 {
    Plansza p;
+   Belka b;
    int dx,dy;
 
-   Kulka(Plansza p,int x,int y,int dx,int dy)
+   Kulka(Plansza p, Belka b, int x,int y,int dx,int dy)
    {
       this.x=x;
       this.y=y;
@@ -16,8 +17,10 @@ class Kulka extends Ellipse2D.Float
       this.height=10;
 
       this.p=p;
+      this.b=b;
       this.dx=dx;
       this.dy=dy;
+      
    }
 
    void nextKrok()
@@ -27,7 +30,10 @@ class Kulka extends Ellipse2D.Float
 
       if(getMinX()<0 || getMaxX()>p.getWidth())  dx=-dx;
       if(getMinY()<0 || getMaxY()>p.getHeight()) dy=-dy;
-
+      if(this.intersects(b)){
+    	//System.out.println(b);  
+    	dy=-dy;
+      }
       p.repaint();
    }
 }

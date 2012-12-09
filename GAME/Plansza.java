@@ -15,16 +15,17 @@ class Plansza extends JPanel implements MouseMotionListener
       addMouseMotionListener(this);
 
       b=new Belka(100);
-      a=new Kulka(this,100,100,1,1);
+      a=new Kulka(this,b,100,100,1,1);
       s=new SilnikKulki(a);
    }
 
    public void paintComponent(Graphics g)
    {
       super.paintComponent(g);
-      Graphics2D g2d=(Graphics2D)g;
-
+      Graphics2D g2d=(Graphics2D)g;      
+      g2d.setColor(Color.BLUE);
       g2d.fill(a);
+      g2d.setColor(Color.RED);
       g2d.fill(b);
    }
 
