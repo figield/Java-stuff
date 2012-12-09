@@ -7,9 +7,10 @@ class Kulka extends Ellipse2D.Float
 {
    Plansza p;
    Belka b;
+   Belka [] c;
    int dx,dy;
 
-   Kulka(Plansza p, Belka b, int x,int y,int dx,int dy)
+   Kulka(Plansza p, Belka b, Belka [] c,  int x,int y,int dx,int dy)
    {
       this.x=x;
       this.y=y;
@@ -18,6 +19,7 @@ class Kulka extends Ellipse2D.Float
 
       this.p=p;
       this.b=b;
+      this.c=c;
       this.dx=dx;
       this.dy=dy;
       
@@ -34,6 +36,14 @@ class Kulka extends Ellipse2D.Float
     	//System.out.println(b);  
     	dy=-dy;
       }
+      
+      for(int i=0;i<12;i++){    	
+        if(this.intersects(c[i])){
+        	c[i].setX(-200); // przesun w lewo, poza plansze
+          	dy=-dy;        	
+         }    
+      }
+      
       p.repaint();
    }
 }

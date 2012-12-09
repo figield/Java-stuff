@@ -11,17 +11,17 @@ public class Program
       {
          public void run()
          {
-            Plansza p;
-            p=new Plansza();
+            Plansza p=new Plansza();
 
             JFrame jf=new JFrame();
             jf.add(p);
 
-            jf.setTitle("Test grafiki");
-            jf.setSize(400,370);
+            jf.setTitle("ARGANOID 0.1");
+            jf.setSize(600,370);
             jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             jf.setVisible(true);
          }
       });
    }
 }
+//http://www.java2s.com/Tutorial/Java/0261__2D-Graphics/Catalog0261__2D-Graphics.htm

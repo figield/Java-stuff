@@ -20,7 +20,7 @@ class SilnikKulki extends Thread
          while(true)
          {
             a.nextKrok();
-            sleep(10);
+            sleep(5);
          }
       }
       catch(InterruptedException e){}
